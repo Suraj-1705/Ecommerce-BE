@@ -1,9 +1,15 @@
-const express = require("express");
-const app = express();
+const express = require('express');
+const app =  express();
 
-app.get("/health", (req,res)=>{
-    res.send("server is running!")
+require('dotenv').config();
+const PORT = process.env.PORT || 4000;
+
+
+
+
+
+
+// activate
+app.listen(PORT, ()=>{
+    console.log(`APP is listening at ${PORT}`);
 })
-
-
-app.listen(3000, console.log(`server started at port`))
